@@ -6,7 +6,6 @@ import java.time.LocalTime;
 import java.util.HashSet;
 import java.util.Set;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @EnableScheduling
 @Entity
@@ -31,7 +30,6 @@ public class Appointment {
     private NailTech nailTech;
 
     @ManyToMany
-    @JsonIgnore
     @JoinTable(
             name = "appointment_services",
             joinColumns = @JoinColumn(name = "appointment_id"),

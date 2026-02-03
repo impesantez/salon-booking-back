@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @EnableScheduling
 @Entity
@@ -24,7 +23,6 @@ public class NailTech {
     private String email;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JsonIgnore
     @JoinTable(
         name = "nailtech_services",
         joinColumns = @JoinColumn(name = "nailtech_id"),
